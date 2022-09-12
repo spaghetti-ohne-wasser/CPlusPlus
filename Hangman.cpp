@@ -3,7 +3,7 @@
 
 int main()
 {
-    short failed;
+    short failed = 0;
     std::string word, out;
     char input;
 
