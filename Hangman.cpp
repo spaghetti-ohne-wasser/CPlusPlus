@@ -27,8 +27,8 @@ int main()
     }
 
     if (out.find("_") != std::string::npos)
-        std::cout << "You have lost" << std::endl;
+        std::cout << word << " You have lost" << std::endl;
     else
-        std::cout << "You have won! With " << failed << " failed attempts" << std::endl;
+        std::cout << word << " You have won! With " << failed << " failed attempts" << std::endl;
     return 0;
 }
