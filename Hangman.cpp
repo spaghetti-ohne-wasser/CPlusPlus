@@ -27,8 +27,8 @@ int main()
     }
 
     if (out.find("_") != std::string::npos)
-        std::cout << "\033[0;31m" << word << " You have lost" << std::endl;
+        std::cout << "\033[2J\033[1;1H\033[0;31m" << word << " You have lost" << std::endl;
     else
-        std::cout << "\033[1;32m" << word << " You have won! With " << failed << " failed attempts" << std::endl;
+        std::cout << "\033[2J\033[1;1H\033[1;32m" << word << " You have won! With " << failed << " failed attempts" << std::endl;
     return 0;
 }
