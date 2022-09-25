@@ -1,22 +1,29 @@
 #include <iostream>
 #include <string>
 
+#define clear "\033[2J\033[1;1H"
+#define red "\033[0;31m"
+#define green "\033[0;32m"
+#define white "\033[0;37m"
+
 int main()
 {
-    short failed = 0;
-    std::string word, out;
     char input;
+    int8_t failed, tries;
+    std::string word, out;
 
-    std::cout << "Hangman" << std::endl <<"Enter the word to be searched for: ";
+    tries = 15;
+    
+    std::cout << "Hangman" << std::endl << "Enter the word to be searched for: ";
     std::cin >> word;
-    std::cout << "\033[2J\033[1;1H";
+    std::cout << clear;
 
-    for (int8_t i = 0; i < word.length(); i++)
+    for (int8_t i; i < word.length(); i++)
         out.append("_");
 
-    while (out.find("_") != std::string::npos && failed < 15)
+    while (out.find("_") != std::string::npos && failed < tries)
     {
-        std::cout << "The following word is searched:" << out << ", you have " << 15 - failed << " more tries" << std::endl;
+        std::cout << "The following word is searched:" << out << ", you have " << tries - (int) failed << " more tries" << std::endl;
         std::cin >> input;
         if (word.find(input) == std::string::npos)
             failed++;
@@ -25,10 +32,10 @@ int main()
                 if (word[i] == input)
                     out[i] = input;
     }
-
     if (out.find("_") != std::string::npos)
-        std::cout << "\033[2J\033[1;1H\033[0;31m" << word << " You have lost" << std::endl;
+        std::cout << red << clear << word << "You have lost";
     else
-        std::cout << "\033[2J\033[1;1H\033[1;32m" << word << " You have won! With " << failed << " failed attempts" << std::endl;
+        std::cout << green << clear << word << " You have won!";
+    std::cout << white << std::endl;
     return 0;
 }
