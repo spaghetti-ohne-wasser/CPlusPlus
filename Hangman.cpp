@@ -37,6 +37,5 @@ int main()
     else
         std::cout << green << clear << word << " You have won!";
     std::cout << white << std::endl;
-    system("PAUSE");
     return 0;
 }
