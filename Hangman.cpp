@@ -33,9 +33,10 @@ int main()
                     out[i] = input;
     }
     if (out.find("_") != std::string::npos)
-        std::cout << red << clear << word << "You have lost";
+        std::cout << red << clear << word << " You have lost";
     else
         std::cout << green << clear << word << " You have won!";
     std::cout << white << std::endl;
+    system("PAUSE");
     return 0;
 }
