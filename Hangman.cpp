@@ -19,7 +19,7 @@ int main()
     std::cout << clear;
 
     for (int8_t i; i < word.length(); i++)
-        out.append("_");
+        out.push_back('_');
 
     while (out.find("_") != std::string::npos && failed < tries)
     {
