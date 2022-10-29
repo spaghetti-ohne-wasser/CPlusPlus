@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 
-std::string Generate_Password(const uint32_t &seed, const uint32_t &length, const std::string &chars)
+std::string generatePassword(const uint32_t &seed, const uint32_t &length, const std::string &chars)
 {
     std::string password;
     srand(seed);
@@ -13,6 +13,6 @@ std::string Generate_Password(const uint32_t &seed, const uint32_t &length, cons
 
 int main()
 {
-    std::cout << Generate_Password(time(NULL), 10, "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") << std::endl;
+    std::cout << generatePassword(time(NULL), 16, "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") << std::endl;
     return 0;
 }
