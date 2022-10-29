@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 
-std::string Generate_Password(const uint32_t seed, const uint32_t length, const std::string chars)
+std::string Generate_Password(const uint32_t &seed, const uint32_t &length, const std::string &chars)
 {
     std::string password;
     srand(seed);
