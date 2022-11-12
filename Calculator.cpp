@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 
 void calculateResult(double &numberOne, double &numberTwo, double &result, char &inputOperator)
